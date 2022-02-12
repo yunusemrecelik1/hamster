@@ -3,8 +3,8 @@ import 'package:hamster/core/extension/context_extension.dart';
 import 'package:hamster/core/init/theme/color_palette.dart';
 
 import '../../../../core/base/view/base_widget.dart';
-import '../../home.dart';
-import '../../profile.dart';
+import '../../home/view/home_view.dart';
+import '../../profile/view/profile_view.dart';
 import '../viewmodel/bottom_navigation_bar_view_model.dart';
 
 class BottomNavigationBarPage extends StatelessWidget {
