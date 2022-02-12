@@ -1,8 +1,6 @@
 // ignore_for_file: avoid_unnecessary_containers, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:hamster/compononts/radiustextformfield/radius_text_form_field.dart';
 import 'package:hamster/core/base/view/base_widget.dart';
 import 'package:hamster/core/components/auto_size_text/auto_size_text.dart';
 import 'package:hamster/core/extension/context_extension.dart';
@@ -11,6 +9,8 @@ import 'package:hamster/view/authentication/register/view/registerpart2/viewmode
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
+
+import '../../../../../../product/components/radiustextformfield/radius_text_form_field.dart';
 
 class RegisterContinueView extends StatelessWidget {
   const RegisterContinueView({Key? key}) : super(key: key);
