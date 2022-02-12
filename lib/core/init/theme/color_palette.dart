@@ -16,6 +16,10 @@ class ColorPalette {
   final bottomNavColor = 'F6F7FF'.colorPalette;
   final profileCardColor = 'F7F7FF'.colorPalette;
   final iconBlack = '000000'.colorPalette;
+  final loginTextColor = '2F2F2F'.colorPalette;
+  final textfieldBackgroundColor = 'F5F8FA'.colorPalette;
+  final textFieldBorderColor = '3E3E3E'.colorPalette;
+  final dividerColor = 'C5C5C5'.colorPalette;
   final cardGrey = 'F3F3F3'.colorPalette;
   final switchTileActiveColor = 'CFFFFB'.colorPalette;
 }
