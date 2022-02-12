@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "717162429325",
+    "project_id": "hamster-b8b44",
+    "storage_bucket": "hamster-b8b44.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:717162429325:android:8650d88f139f76f3e09bc4",
+        "android_client_info": {
+          "package_name": "com.example.hamster"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "717162429325-u8judhh795q7vf2v902g34hl0r7t670l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtzhMl2ilIPjWedy3tKTtyIFbFAQ_2PFc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "717162429325-u8judhh795q7vf2v902g34hl0r7t670l.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "717162429325-enbt8slulacurojmu72o44keo48ncdt8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.hamster"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
