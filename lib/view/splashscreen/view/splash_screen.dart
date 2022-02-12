@@ -31,12 +31,10 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Expanded(
-          child: AspectRatio(
-            aspectRatio: 1 / 3,
-            child: Image.asset(
-              ImageConstants.instance!.toGif("logoanimation"),
-            ),
+        child: AspectRatio(
+          aspectRatio: 1 / 3,
+          child: Image.asset(
+            ImageConstants.instance!.toGif("logoanimation"),
           ),
         ),
       ),

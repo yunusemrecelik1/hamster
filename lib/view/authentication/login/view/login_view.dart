@@ -40,13 +40,10 @@ class LoginView extends StatelessWidget {
                       ),
                       Padding(
                         padding: viewInsets,
-                        child: Expanded(
-                          flex: 13,
-                          child: AnimatedContainer(
-                              duration: const Duration(milliseconds: 300),
-                              curve: Curves.bounceInOut,
-                              child: formBody(context, value)),
-                        ),
+                        child: AnimatedContainer(
+                            duration: const Duration(milliseconds: 300),
+                            curve: Curves.bounceInOut,
+                            child: formBody(context, value)),
                       ),
                       Expanded(
                         flex: 4,
@@ -153,28 +150,24 @@ class LoginView extends StatelessWidget {
             height: 20,
           ),
           Row(children: <Widget>[
-            Expanded(
-              child: Container(
-                  margin: const EdgeInsets.only(left: 10.0, right: 20.0),
-                  child: Divider(
-                    color: ColorPalette.instance.dividerColor,
-                    height: 36,
-                    thickness: 1.5,
-                  )),
-            ),
+            Container(
+                margin: const EdgeInsets.only(left: 10.0, right: 20.0),
+                child: Divider(
+                  color: ColorPalette.instance.dividerColor,
+                  height: 36,
+                  thickness: 1.5,
+                )),
             AppText(
               myText: "Veya",
               color: ColorPalette.instance.dividerColor,
             ),
-            Expanded(
-              child: Container(
-                  margin: const EdgeInsets.only(left: 20.0, right: 10.0),
-                  child: Divider(
-                    color: ColorPalette.instance.dividerColor,
-                    thickness: 1.5,
-                    height: 36,
-                  )),
-            ),
+            Container(
+                margin: const EdgeInsets.only(left: 20.0, right: 10.0),
+                child: Divider(
+                  color: ColorPalette.instance.dividerColor,
+                  thickness: 1.5,
+                  height: 36,
+                )),
           ]),
           const SizedBox(
             height: 20,
