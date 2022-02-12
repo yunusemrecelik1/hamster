@@ -28,3 +28,8 @@ flutter:
 
   uses-material-design: true
 
+  fonts:
+    - family: Mulish
+      fonts:
+        - asset: fonts/Mulish-Regular.ttf
+        - asset: fonts/Mulish-Bold.ttf
