@@ -42,8 +42,8 @@ class BottomNavigationBarPage extends StatelessWidget {
       ),
       child: [
         const HomeView(),
+        const HomeView(),
         const ProfileView(),
-        const HomeView()
       ][value.pageIndex],
     );
   }

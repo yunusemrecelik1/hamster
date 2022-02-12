@@ -14,5 +14,8 @@ class ColorPalette {
   final appBrown = '3D3D3D'.colorPalette;
   final appWhite = 'FFFFFF'.colorPalette;
   final bottomNavColor = 'F6F7FF'.colorPalette;
+  final profileCardColor = 'F7F7FF'.colorPalette;
   final iconBlack = '000000'.colorPalette;
+  final cardGrey = 'F3F3F3'.colorPalette;
+  final switchTileActiveColor = 'CFFFFB'.colorPalette;
 }
