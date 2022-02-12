@@ -13,6 +13,7 @@ extension MediaQueryExtension on BuildContext {
 
   double get lowValue => height * 0.01;
   double get normalValue => height * 0.02;
+  double get midValue => height * 0.03;
   double get mediumValue => height * 0.04;
   double get highValue => height * 0.1;
 }
@@ -26,6 +27,7 @@ extension ThemeExtension on BuildContext {
 extension PaddingExtensionAll on BuildContext {
   EdgeInsets get paddingLow => EdgeInsets.all(lowValue);
   EdgeInsets get paddingNormal => EdgeInsets.all(normalValue);
+  EdgeInsets get paddingMid => EdgeInsets.all(midValue);
   EdgeInsets get paddingMedium => EdgeInsets.all(mediumValue);
   EdgeInsets get paddingHigh => EdgeInsets.all(highValue);
 }
@@ -50,9 +52,24 @@ extension PaddingExtensionSymetric on BuildContext {
 }
 
 extension PaddingExtensionOnly on BuildContext {
-  EdgeInsets get paddingLowBottom => EdgeInsets.only(bottom: lowValue);
-  EdgeInsets get paddingNormalRight => EdgeInsets.only(right: normalValue);
-  EdgeInsets get paddingNormalTop => EdgeInsets.only(top: normalValue);
+  EdgeInsets get paddingLowBottom =>
+      EdgeInsets.only(bottom: lowValue);
+  EdgeInsets get paddingNormalRight =>
+      EdgeInsets.only(right: normalValue);
+  EdgeInsets get paddingNormalTop =>
+      EdgeInsets.only(top: normalValue);
+  EdgeInsets get paddingLowTop =>
+      EdgeInsets.only(top: lowValue);
+  EdgeInsets get paddingMediumLeft =>
+      EdgeInsets.only(left: mediumValue);
+  EdgeInsets get paddingNormalLeft =>
+      EdgeInsets.only(left: normalValue);
+  EdgeInsets get paddingLowLeft =>
+      EdgeInsets.only(left: lowValue);
+}
+extension PaddingWithOutOnly on BuildContext {
+  EdgeInsets get paddingNormalWithOutBottom =>
+      EdgeInsets.only(right: normalValue,left: normalValue,top: normalValue);
 }
 
 extension RadiusCircular on BuildContext {
