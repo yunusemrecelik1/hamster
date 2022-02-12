@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_conditional_assignment
+
 class ImageConstants {
   static ImageConstants? _instance;
 
@@ -13,4 +15,5 @@ class ImageConstants {
   String get coffee_2 => toPng("coffee_2");
 
   String toPng(String name) => "assets/images/$name.png";
+  String toGif(String name) => "assets/gifs/$name.gif";
 }

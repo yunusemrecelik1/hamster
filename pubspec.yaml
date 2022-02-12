@@ -19,6 +19,12 @@ dependencies:
   cupertino_icons: ^1.0.2
   #animations
   animations: ^2.0.2
+  #responsive text
+  auto_size_text: ^3.0.0
+  #progress_hud
+  modal_progress_hud_nsn: ^0.1.0-nullsafety-1
+  #formatter
+  mask_text_input_formatter: ^2.1.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -27,7 +33,10 @@ dev_dependencies:
 flutter:
 
   uses-material-design: true
-
+  assets:
+    - assets/images/
+    - assets/gifs/
+    
   fonts:
     - family: Mulish
       fonts:

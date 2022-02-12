@@ -1,14 +1,13 @@
 // Flutter imports:
 import 'dart:math';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-extension ContextExtension on BuildContext{
+extension ContextExtension on BuildContext {
   MediaQueryData get mediaQuery => MediaQuery.of(this);
 }
 
-extension MediaQueryExtension on BuildContext{
+extension MediaQueryExtension on BuildContext {
   double get height => mediaQuery.size.height;
   double get width => mediaQuery.size.width;
 
@@ -18,13 +17,13 @@ extension MediaQueryExtension on BuildContext{
   double get highValue => height * 0.1;
 }
 
-extension ThemeExtension on BuildContext{
+extension ThemeExtension on BuildContext {
   ThemeData get theme => Theme.of(this);
   TextTheme get textTheme => theme.textTheme;
   ColorScheme get colors => theme.colorScheme;
 }
 
-extension PaddingExtensionAll on BuildContext{
+extension PaddingExtensionAll on BuildContext {
   EdgeInsets get paddingLow => EdgeInsets.all(lowValue);
   EdgeInsets get paddingNormal => EdgeInsets.all(normalValue);
   EdgeInsets get paddingMedium => EdgeInsets.all(mediumValue);
@@ -51,39 +50,31 @@ extension PaddingExtensionSymetric on BuildContext {
 }
 
 extension PaddingExtensionOnly on BuildContext {
-  EdgeInsets get paddingLowBottom =>
-      EdgeInsets.only(bottom: lowValue);
-  EdgeInsets get paddingNormalRight =>
-      EdgeInsets.only(right: normalValue);
-  EdgeInsets get paddingNormalTop =>
-      EdgeInsets.only(top: normalValue);
+  EdgeInsets get paddingLowBottom => EdgeInsets.only(bottom: lowValue);
+  EdgeInsets get paddingNormalRight => EdgeInsets.only(right: normalValue);
+  EdgeInsets get paddingNormalTop => EdgeInsets.only(top: normalValue);
 }
 
-extension RadiusCircular on BuildContext{
-  Radius get normalRadiusCircular =>
-      Radius.circular(normalValue);
-  Radius get lowRadiusCircular =>
-      Radius.circular(lowValue);
-  Radius get mediumRadiusCircular =>
-      Radius.circular(mediumValue);
+extension RadiusCircular on BuildContext {
+  Radius get normalRadiusCircular => Radius.circular(normalValue);
+  Radius get lowRadiusCircular => Radius.circular(lowValue);
+  Radius get mediumRadiusCircular => Radius.circular(mediumValue);
 }
 
 extension BorderRadiusExtension on BuildContext {
-  BorderRadius get borderNormalTopLeftRight =>
-      BorderRadius.only(topLeft: normalRadiusCircular,topRight:normalRadiusCircular);
-  BorderRadius get borderMediumTopLeftRight =>
-      BorderRadius.only(topLeft: mediumRadiusCircular,topRight:mediumRadiusCircular);
-  BorderRadius get borderNormalAll =>
-      BorderRadius.all(normalRadiusCircular);
-  BorderRadius get borderLowAll =>
-      BorderRadius.all(lowRadiusCircular);
+  BorderRadius get borderNormalTopLeftRight => BorderRadius.only(
+      topLeft: normalRadiusCircular, topRight: normalRadiusCircular);
+  BorderRadius get borderMediumTopLeftRight => BorderRadius.only(
+      topLeft: mediumRadiusCircular, topRight: mediumRadiusCircular);
+  BorderRadius get borderNormalAll => BorderRadius.all(normalRadiusCircular);
+  BorderRadius get borderLowAll => BorderRadius.all(lowRadiusCircular);
 }
 
 extension PageExtension on BuildContext {
   Color get randomColor => Colors.primaries[Random().nextInt(17)];
 }
 
-extension DurationExtension on BuildContext{
+extension DurationExtension on BuildContext {
   Duration get lowDuration => const Duration(milliseconds: 500);
   Duration get normalDuration => const Duration(seconds: 1);
 }
