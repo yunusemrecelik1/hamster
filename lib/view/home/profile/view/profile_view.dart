@@ -22,7 +22,7 @@ class ProfileView extends StatelessWidget {
             flex: 3,
             child: Padding(
               padding: context.paddingMedium,
-              child: buildUserCard(context),
+              child: buildUserCard(context,value),
             ),
           ),
           Expanded(
@@ -38,51 +38,56 @@ class ProfileView extends StatelessWidget {
     );
   }
 
-  Card buildUserCard(BuildContext context) {
-    return Card(
-              color: ColorPalette.instance.profileCardColor,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(context.normalValue),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: context.paddingMid,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(context.lowValue),
-                      child: const Image(
-                        image: NetworkImage(
-                            "https://picsum.photos/id/1/200/200"),
+  Widget buildUserCard(BuildContext context,ProfileViewModel model) {
+    return InkWell(
+      onTap: (){
+        model.getUser();
+      },
+      child: Card(
+                color: ColorPalette.instance.profileCardColor,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(context.normalValue),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: context.paddingMid,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(context.lowValue),
+                        child: const Image(
+                          image: NetworkImage(
+                              "https://picsum.photos/id/1/200/200"),
+                        ),
                       ),
                     ),
-                  ),
-                  Padding(
-                    padding: context.paddingMid + context.paddingLowLeft,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: const [
-                        Text(
-                          "Emre",
-                          style: TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.w700),
-                        ),
-                        Text(
-                          "Emre",
-                          style: TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.w700),
-                        ),
-                        Text(
-                          "Emre",
-                          style: TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.w700),
-                        ),
-                      ],
-                    ),
-                  )
-                ],
+                    Padding(
+                      padding: context.paddingMid + context.paddingLowLeft,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: const [
+                          Text(
+                            "Emre",
+                            style: TextStyle(
+                                fontSize: 18, fontWeight: FontWeight.w700),
+                          ),
+                          Text(
+                            "Emre",
+                            style: TextStyle(
+                                fontSize: 18, fontWeight: FontWeight.w700),
+                          ),
+                          Text(
+                            "Emre",
+                            style: TextStyle(
+                                fontSize: 18, fontWeight: FontWeight.w700),
+                          ),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
               ),
-            );
+    );
   }
 
   Column buildPageBody(BuildContext context, ProfileViewModel value) {

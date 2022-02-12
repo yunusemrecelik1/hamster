@@ -1,8 +1,12 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:hamster/view/home/bottom_navigation_bar/view/bottom_navigation_bar_view.dart';
 import 'core/init/navigation/navigation_route.dart';
 import 'core/init/navigation/navigation_service.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const HamsterApp());
 }
 
@@ -14,8 +18,9 @@ class HamsterApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(fontFamily: "Mulish"),
       debugShowCheckedModeBanner: false,
-      onGenerateRoute: NavigationRoute.instance.generateRoute,
-      navigatorKey: NavigationService.instance.navigatorKey,
+      // onGenerateRoute: NavigationRoute.instance.generateRoute,
+      // navigatorKey: NavigationService.instance.navigatorKey,
+      home: BottomNavigationBarPage(),
     );
   }
 }
