@@ -62,7 +62,7 @@ class LoginView extends StatelessWidget {
 
   Widget formBody(BuildContext context, LoginViewModel value) {
     return Padding(
-      padding: context.paddingHighHorizontal,
+      padding: context.paddingMediumHorizontal,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -138,7 +138,7 @@ class LoginView extends StatelessWidget {
             ),
             // ignore: deprecated_member_use
             child: FlatButton(
-              onPressed: () => value.loginButon(),
+              onPressed: () => value.loginButton(),
               child: AppText(
                 myText: "Giriş Yap",
                 color: ColorPalette.instance.appWhite,
@@ -149,7 +149,7 @@ class LoginView extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          Row(children: <Widget>[
+          Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,children: <Widget>[
             Container(
                 margin: const EdgeInsets.only(left: 10.0, right: 20.0),
                 child: Divider(
