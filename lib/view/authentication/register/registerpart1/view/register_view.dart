@@ -5,26 +5,23 @@ import 'package:hamster/core/base/view/base_widget.dart';
 import 'package:hamster/core/components/auto_size_text/auto_size_text.dart';
 import 'package:hamster/core/extension/context_extension.dart';
 import 'package:hamster/core/init/theme/color_palette.dart';
-import 'package:hamster/view/authentication/register/view/registerpart2/viewmodel/register_part2_view_model.dart';
-import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
-
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
+import '../../../../../product/components/radiustextformfield/radius_text_form_field.dart';
+import '../viewmodel/register_view_model.dart';
 
-import '../../../../../../product/components/radiustextformfield/radius_text_form_field.dart';
-
-class RegisterContinueView extends StatelessWidget {
-  const RegisterContinueView({Key? key}) : super(key: key);
+class RegisterView extends StatelessWidget {
+  const RegisterView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final viewInsets = MediaQuery.of(context).viewInsets;
-    return BaseView<RegisterContinueViewModel>(
-      viewModel: RegisterContinueViewModel(),
+    return BaseView<RegisterViewModel>(
+      viewModel: RegisterViewModel(),
       onModelReady: (model) {
         model.setContext(context);
         model.init();
       },
-      onPageBuilder: (context, RegisterContinueViewModel value) => Scaffold(
+      onPageBuilder: (context, RegisterViewModel value) => Scaffold(
         body: SafeArea(
           child: Form(
             key: value.globalFormKey,
@@ -50,7 +47,7 @@ class RegisterContinueView extends StatelessWidget {
                         ),
                       ),
                       Expanded(
-                        flex: 4,
+                        flex: 2,
                         child: Container(),
                       ),
                     ],
@@ -64,15 +61,15 @@ class RegisterContinueView extends StatelessWidget {
     );
   }
 
-  Widget formBody(BuildContext context, RegisterContinueViewModel value) {
+  Widget formBody(BuildContext context, RegisterViewModel value) {
     return Padding(
-      padding: context.paddingHighHorizontal,
+      padding: context.paddingMediumHorizontal,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           AppText(
-            myText: "Ad Soyad",
+            myText: "E-mail",
             color: ColorPalette.instance.loginTextColor,
             normalFontSize: 13,
             fontWeight: FontWeight.w600,
@@ -86,8 +83,8 @@ class RegisterContinueView extends StatelessWidget {
           SizedBox(
             width: context.width,
             child: RadiusFormFieldWidget(
-              controller: value.nameController,
-              validateText: "Ad soyad boş olamaz",
+              controller: value.emailController,
+              validateText: "Email boş olamaz",
               suffix: false,
             ),
           ),
@@ -95,7 +92,7 @@ class RegisterContinueView extends StatelessWidget {
             height: 10,
           ),
           AppText(
-            myText: "Doğum Tarihi",
+            myText: "Şifre",
             color: ColorPalette.instance.loginTextColor,
             normalFontSize: 13,
             fontWeight: FontWeight.w600,
@@ -109,21 +106,16 @@ class RegisterContinueView extends StatelessWidget {
           SizedBox(
             width: context.width,
             child: RadiusFormFieldWidget(
-              keyboardType: TextInputType.number,
-              inputFormatters: [
-                MaskTextInputFormatter(
-                    mask: "##/##/####", filter: {"#": RegExp(r'[0-9]')})
-              ],
-              controller: value.dateBornController,
+              controller: value.passwordController,
               validateText: "Şifre boş olamaz",
-              suffix: false,
+              suffix: true,
             ),
           ),
           const SizedBox(
             height: 10,
           ),
           AppText(
-            myText: "Telefon Numarası",
+            myText: "Şifre Tekrar",
             color: ColorPalette.instance.loginTextColor,
             normalFontSize: 13,
             fontWeight: FontWeight.w600,
@@ -137,27 +129,25 @@ class RegisterContinueView extends StatelessWidget {
           SizedBox(
             width: context.width,
             child: RadiusFormFieldWidget(
-              keyboardType: TextInputType.number,
-              controller: value.mobilenumberController,
+              controller: value.passwordAgainController,
               validateText: "Şifre Tekrarı boş olamaz",
-              suffix: false,
-              initialText: "Zorunlu Değildir",
+              suffix: true,
             ),
           ),
           const SizedBox(
-            height: 40,
+            height: 20,
           ),
           Container(
-            width: context.width * 0.4,
+            width: context.width,
             decoration: BoxDecoration(
               color: ColorPalette.instance.appBlack,
               borderRadius: BorderRadius.circular(5),
             ),
             // ignore: deprecated_member_use
             child: FlatButton(
-              onPressed: () => value.continueButton(),
+              onPressed: () => value.signupButton(),
               child: AppText(
-                myText: "Devam",
+                myText: "Kayıt Ol",
                 color: ColorPalette.instance.appWhite,
                 fontWeight: FontWeight.w800,
               ),
@@ -165,6 +155,55 @@ class RegisterContinueView extends StatelessWidget {
           ),
           const SizedBox(
             height: 20,
+          ),
+          Row(children: <Widget>[
+            Expanded(
+              child: Container(
+                  margin: const EdgeInsets.only(left: 10.0, right: 20.0),
+                  child: Divider(
+                    color: ColorPalette.instance.dividerColor,
+                    height: 36,
+                    thickness: 1.5,
+                  )),
+            ),
+            AppText(
+              myText: "Veya",
+              color: ColorPalette.instance.dividerColor,
+            ),
+            Expanded(
+              child: Container(
+                  margin: const EdgeInsets.only(left: 20.0, right: 10.0),
+                  child: Divider(
+                    color: ColorPalette.instance.dividerColor,
+                    thickness: 1.5,
+                    height: 36,
+                  )),
+            ),
+          ]),
+          const SizedBox(
+            height: 20,
+          ),
+          SizedBox(
+            width: context.width,
+            child: Align(
+              alignment: Alignment.center,
+              child: Container(
+                width: context.width * 0.3,
+                decoration: BoxDecoration(
+                  color: ColorPalette.instance.appBlack,
+                  borderRadius: BorderRadius.circular(5),
+                ),
+                // ignore: deprecated_member_use
+                child: FlatButton(
+                  onPressed: () => value.loginButton(),
+                  child: AppText(
+                    myText: "Giriş Yap",
+                    color: ColorPalette.instance.appWhite,
+                    fontWeight: FontWeight.w800,
+                  ),
+                ),
+              ),
+            ),
           ),
         ],
       ),
@@ -176,7 +215,7 @@ class RegisterContinueView extends StatelessWidget {
       children: [
         const Spacer(),
         const AppText(
-          myText: "Devam Edelim",
+          myText: "Kayıt Ol",
           normalFontSize: 28,
           fontWeight: FontWeight.w700,
           letterSpacing: 0.5,

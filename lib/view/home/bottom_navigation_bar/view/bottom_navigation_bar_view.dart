@@ -3,8 +3,9 @@ import 'package:hamster/core/extension/context_extension.dart';
 import 'package:hamster/core/init/theme/color_palette.dart';
 
 import '../../../../core/base/view/base_widget.dart';
-import '../../home/view/home_view.dart';
+import '../../findhamster/view/find_hamster_view.dart';
 import '../../profile/view/profile_view.dart';
+import '../../statistics/view/statistics_view.dart';
 import '../viewmodel/bottom_navigation_bar_view_model.dart';
 import 'package:animations/animations.dart';
 
@@ -41,8 +42,8 @@ class BottomNavigationBarPage extends StatelessWidget {
         child: child,
       ),
       child: [
-        const HomeView(),
-        const HomeView(),
+        const FindHamsterView(),
+        const StatisticsView(),
         const ProfileView(),
       ][value.pageIndex],
     );
@@ -90,7 +91,7 @@ class BottomNavigationBarPage extends StatelessWidget {
             context: context),
         buildIcon(
             value: value,
-            icon: value.pageIndex == 1 ? Icons.person : Icons.person_outline,
+            icon: value.pageIndex == 1 ? Icons.map : Icons.map_outlined,
             pageIndex: 1,
             context: context),
         buildIcon(

@@ -38,6 +38,14 @@ class _RadiusFormFieldWidgetState extends State<RadiusFormFieldWidget> {
   bool _obscureText = false;
 
   @override
+  void initState() {
+    super.initState();
+    if(widget.suffix){
+      _obscureText = true;
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     return TextFormField(
       maxLines: 1,

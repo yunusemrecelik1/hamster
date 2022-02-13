@@ -8,7 +8,7 @@ class GetUserService  extends IUserService{
 
   @override
   Future<UserModel?> getUser(String userId) async{
-    final result = manager.getUser("mgEjMA1JYZaD0j2FKR2d");
+    final result = manager.getUser(userId);
     return result;
   }
 

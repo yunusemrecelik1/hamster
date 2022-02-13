@@ -6,7 +6,8 @@ import 'package:hamster/core/components/auto_size_text/auto_size_text.dart';
 import 'package:hamster/core/constants/image/image_constants.dart';
 import 'package:hamster/core/extension/context_extension.dart';
 import 'package:hamster/core/init/theme/color_palette.dart';
-import 'package:hamster/view/authentication/register/view/registerpart2/view/completeregister/viewmodel/complete_register_model_view.dart';
+
+import '../viewmodel/complete_register_model_view.dart';
 
 class CompleteRegisterView extends StatelessWidget {
   const CompleteRegisterView({Key? key}) : super(key: key);
@@ -112,7 +113,7 @@ class CompleteRegisterView extends StatelessWidget {
                   borderRadius: BorderRadius.circular(5),
                 ),
                 child: FlatButton(
-                  onPressed: () => value.goMobileVerify(),
+                  onPressed: () => value.navigateLogin(),
                   child: Icon(
                     Icons.arrow_forward_ios,
                     color: ColorPalette.instance.appWhite,

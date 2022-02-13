@@ -10,9 +10,9 @@ class CompleteRegisterModelView extends ChangeNotifier with BaseViewModel {
   @override
   void setContext(BuildContext context) => this.context;
 
-  void goMobileVerify() {
-    NavigationService.instance.navigateToPage(
-      path: NavigationConstants.mobileverify,
+  void navigateLogin() {
+    NavigationService.instance.navigateToPageClear(
+      path: NavigationConstants.loginPage,
     );
   }
 }
