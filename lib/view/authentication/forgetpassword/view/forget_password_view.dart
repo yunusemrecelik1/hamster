@@ -6,22 +6,23 @@ import 'package:hamster/core/components/auto_size_text/auto_size_text.dart';
 import 'package:hamster/core/extension/context_extension.dart';
 import 'package:hamster/core/init/theme/color_palette.dart';
 import 'package:hamster/product/components/radiustextformfield/radius_text_form_field.dart';
+import 'package:hamster/view/authentication/forgetpassword/viewmodel/forget_password_model_view.dart';
 import 'package:hamster/view/authentication/login/viewmodel/login_view_model.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
-class LoginView extends StatelessWidget {
-  const LoginView({Key? key}) : super(key: key);
+class ForgetPasswordView extends StatelessWidget {
+  const ForgetPasswordView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final viewInsets = MediaQuery.of(context).viewInsets;
-    return BaseView<LoginViewModel>(
-      viewModel: LoginViewModel(),
+    return BaseView<ForgetPasswordModelView>(
+      viewModel: ForgetPasswordModelView(),
       onModelReady: (model) {
         model.setContext(context);
         model.init();
       },
-      onPageBuilder: (context, LoginViewModel value) => Scaffold(
+      onPageBuilder: (context, ForgetPasswordModelView value) => Scaffold(
         body: SafeArea(
           child: Form(
             key: value.globalFormKey,
@@ -35,9 +36,15 @@ class LoginView extends StatelessWidget {
                   child: Column(
                     children: [
                       Expanded(
-                        flex: 3,
+                        flex: 2,
                         child: welcomeUpSide(),
                       ),
+                      const Spacer(),
+                      Padding(
+                        padding: context.paddingMediumHorizontal,
+                        child: informationText(),
+                      ),
+                      const Spacer(),
                       Padding(
                         padding: viewInsets,
                         child: AnimatedContainer(
@@ -46,7 +53,7 @@ class LoginView extends StatelessWidget {
                             child: formBody(context, value)),
                       ),
                       Expanded(
-                        flex: 4,
+                        flex: 6,
                         child: Container(),
                       ),
                     ],
@@ -60,7 +67,7 @@ class LoginView extends StatelessWidget {
     );
   }
 
-  Widget formBody(BuildContext context, LoginViewModel value) {
+  Widget formBody(BuildContext context, ForgetPasswordModelView value) {
     return Padding(
       padding: context.paddingMediumHorizontal,
       child: Column(
@@ -90,42 +97,8 @@ class LoginView extends StatelessWidget {
           SizedBox(
             height: context.height * 0.05,
           ),
-          AppText(
-            myText: "Şifre",
-            color: ColorPalette.instance.loginTextColor,
-            normalFontSize: 13,
-            fontWeight: FontWeight.w600,
-            minFontSize: 12,
-            maxFontSize: 40,
-            letterSpacing: 0,
-          ),
-          const SizedBox(
-            height: 5,
-          ),
-          SizedBox(
-            width: context.width,
-            child: RadiusFormFieldWidget(
-              controller: value.passwordController,
-              validateText: "Şifre boş olamaz",
-              suffix: true,
-            ),
-          ),
           const SizedBox(
             height: 10,
-          ),
-          Align(
-            alignment: Alignment.centerRight,
-            child: GestureDetector(
-              child: AppText(
-                myText: "Şifrenizimi unuttunuz?",
-                color: ColorPalette.instance.loginTextColor,
-                normalFontSize: 13,
-                fontWeight: FontWeight.w600,
-                minFontSize: 12,
-                maxFontSize: 40,
-                letterSpacing: 0,
-              ),
-            ),
           ),
           const SizedBox(
             height: 20,
@@ -138,9 +111,9 @@ class LoginView extends StatelessWidget {
             ),
             // ignore: deprecated_member_use
             child: FlatButton(
-              onPressed: () => value.loginButton(),
+              onPressed: () => null,
               child: AppText(
-                myText: "Giriş Yap",
+                myText: "Kodu Gönder",
                 color: ColorPalette.instance.appWhite,
                 fontWeight: FontWeight.w800,
               ),
@@ -148,53 +121,6 @@ class LoginView extends StatelessWidget {
           ),
           const SizedBox(
             height: 20,
-          ),
-          Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Container(
-                    margin: const EdgeInsets.only(left: 10.0, right: 20.0),
-                    child: Divider(
-                      color: ColorPalette.instance.dividerColor,
-                      height: 36,
-                      thickness: 1.5,
-                    )),
-                AppText(
-                  myText: "Veya",
-                  color: ColorPalette.instance.dividerColor,
-                ),
-                Container(
-                    margin: const EdgeInsets.only(left: 20.0, right: 10.0),
-                    child: Divider(
-                      color: ColorPalette.instance.dividerColor,
-                      thickness: 1.5,
-                      height: 36,
-                    )),
-              ]),
-          const SizedBox(
-            height: 20,
-          ),
-          SizedBox(
-            width: context.width,
-            child: Align(
-              alignment: Alignment.center,
-              child: Container(
-                width: context.width * 0.3,
-                decoration: BoxDecoration(
-                  color: ColorPalette.instance.appBlack,
-                  borderRadius: BorderRadius.circular(5),
-                ),
-                // ignore: deprecated_member_use
-                child: FlatButton(
-                  onPressed: () => value.signupButton(),
-                  child: AppText(
-                    myText: "Kayıt Ol",
-                    color: ColorPalette.instance.appWhite,
-                    fontWeight: FontWeight.w800,
-                  ),
-                ),
-              ),
-            ),
           ),
         ],
       ),
@@ -206,10 +132,27 @@ class LoginView extends StatelessWidget {
       children: [
         const Spacer(),
         const AppText(
-          myText: "Hoşgeldiniz",
+          myText: "Şifrenizi Yenileyin",
           normalFontSize: 28,
           fontWeight: FontWeight.w700,
           letterSpacing: 0.5,
+        ),
+        const Spacer(
+          flex: 6,
+        ),
+      ],
+    );
+  }
+
+  Row informationText() {
+    return Row(
+      children: [
+        const Spacer(),
+        const AppText(
+          myText: "Lütfen kayıtlı olan E-mail adresinizi giriniz.",
+          normalFontSize: 12,
+          fontWeight: FontWeight.w700,
+          letterSpacing: 0.1,
         ),
         const Spacer(
           flex: 6,

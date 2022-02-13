@@ -3,5 +3,8 @@ class NavigationConstants {
   static const loginPage = "/login";
   static const registerPage = "/register";
   static const registerPageContinue = "/registercontinue";
+  static const completeregister = "/registercomplete";
+  static const mobileverify = "/mobileverify";
+  static const mapsection = "/maphome";
   static const home = "/home";
 }

@@ -31,7 +31,13 @@ dependencies:
   #json
   json_annotation: ^4.4.0
   json_serializable: ^6.1.4
-
+  #map
+  flutter_map: ^0.14.0
+  #location
+  geolocator: ^8.1.1
+  #qrscanner
+  qr_flutter: ^4.0.0
+  qr_code_scanner: ^0.6.1
 dev_dependencies:
   flutter_test:
     sdk: flutter

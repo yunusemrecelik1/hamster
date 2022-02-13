@@ -22,4 +22,8 @@ class ColorPalette {
   final dividerColor = 'C5C5C5'.colorPalette;
   final cardGrey = 'F3F3F3'.colorPalette;
   final switchTileActiveColor = 'CFFFFB'.colorPalette;
+  final verifiticationColor = 'EBEBEB'.colorPalette;
+  final verifiticationTextColor = '17A398'.colorPalette;
+  final verificationTextSendColor = '787878'.colorPalette;
+  final mapLocationColorCircle1 = "FFFFB3".colorPalette;
 }

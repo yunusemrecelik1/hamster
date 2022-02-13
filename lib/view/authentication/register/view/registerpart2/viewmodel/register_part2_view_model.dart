@@ -26,9 +26,9 @@ class RegisterContinueViewModel extends ChangeNotifier with BaseViewModel {
   }
 
   continueButton() {
-    if (validateAndSave()) {
-      isAsyncCall = true;
-    }
+    NavigationService.instance.navigateToPage(
+      path: NavigationConstants.completeregister,
+    );
   }
 
   signupButton() {
