@@ -1,16 +1,28 @@
-# hamster
+# Hamster
 
-A new Flutter project.
+Clean Architecture-Mvvm Mimarisi-Mobx statemanagement-Theme Management-Atomic Design gibi konularda kendimi geliştirmek amaçlı yaptığım uygulamadır.
 
-## Getting Started
+* Tasarım: https://www.figma.com/file/ckt3FUAhtu9vMnjOVKp745/flutter_proje?node-id=0%3A1
+* Backend: Firebase
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+## Kullanım
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+**Adım 1:**
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Aşağıdaki linkten indirebilir ya da klonlayabilirsiniz
+
+```
+https://github.com/yunusemrecelik1/hamster
+```
+
+**Adım 2:**
+
+Console'a aşağıdaki kodu yazınız.
+
+```
+flutter pub get 
+```
+**Proje Detayı ** 
+
+Duraklar parklar gibi topluluk alanlarına koyulan özel bisikletler sayesinde hem spor yapıp, hem elektrik üretip hem de para ve otobüs bileti kazanabileceğiz bir uygulama. Qr Kodu okutun ve bisikleti sürmeye başlayın.
