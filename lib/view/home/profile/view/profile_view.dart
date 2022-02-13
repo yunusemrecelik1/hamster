@@ -16,7 +16,7 @@ class ProfileView extends StatelessWidget {
         model.setContext(context);
         model.init();
       },
-      onPageBuilder: (context, ProfileViewModel value) => Column(
+      onPageBuilder: (context, ProfileViewModel value) => value.isLoading ? const CircularProgressIndicator.adaptive() : Column(
         children: [
           Expanded(
             flex: 3,
@@ -65,19 +65,14 @@ class ProfileView extends StatelessWidget {
                       padding: context.paddingMid + context.paddingLowLeft,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: const [
+                        children: [
                           Text(
-                            "Emre",
-                            style: TextStyle(
+                            "${model.user.name}",
+                            style: const TextStyle(
                                 fontSize: 18, fontWeight: FontWeight.w700),
                           ),
-                          Text(
-                            "Emre",
-                            style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.w700),
-                          ),
-                          Text(
-                            "Emre",
+                          const Text(
+                            "İstanbul",
                             style: TextStyle(
                                 fontSize: 18, fontWeight: FontWeight.w700),
                           ),

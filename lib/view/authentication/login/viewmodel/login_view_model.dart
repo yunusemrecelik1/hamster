@@ -31,20 +31,28 @@ class LoginViewModel extends ChangeNotifier with BaseViewModel {
     return false;
   }
 
-  loginButton() {
+  Future<void>loginButton() async{
     if (validateAndSave()) {
       isAsyncCall = true;
       LoginModel model = LoginModel(email: emailController.text,password: passwordController.text);
-      final result = loginService.loginUser(model);
-      print(result);
+      final result = await loginService.loginUser(model);
       isAsyncCall = false;
-      notifyListeners();
+      if(result != null && result){
+        NavigationService.instance.navigateToPageClear(
+          path: NavigationConstants.home,
+        );
+      }
     }
   }
 
   signupButton() {
     NavigationService.instance.navigateToPage(
       path: NavigationConstants.registerPage,
+    );
+  }
+  forgetNavigate(){
+    NavigationService.instance.navigateToPage(
+      path: NavigationConstants.forgetPassword,
     );
   }
 }

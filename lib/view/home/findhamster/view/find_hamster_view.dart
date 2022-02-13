@@ -52,7 +52,7 @@ class _FindHamsterViewState extends State<FindHamsterView>
                     child: FlutterMap(
                       options: MapOptions(
                         center: LatLng(
-                            value.locationLatidude, value.locationLongitude),
+                            value.locationLatitude, value.locationLongitude),
                         zoom: 10.0,
                         maxZoom: 18,
                         minZoom: 8,
@@ -66,7 +66,7 @@ class _FindHamsterViewState extends State<FindHamsterView>
                           Marker(
                             width: 40,
                             height: 40,
-                            point: LatLng(value.locationLatidude,
+                            point: LatLng(value.locationLatitude,
                                 value.locationLongitude),
                             builder: (context) => Container(
                               alignment: Alignment.center,
@@ -78,7 +78,7 @@ class _FindHamsterViewState extends State<FindHamsterView>
                                 boxShadow: [
                                   // ignore: prefer_const_constructors
                                   BoxShadow(
-                                      color: Color(0xffF8D05D),
+                                      color: const Color(0xffF8D05D),
                                       blurRadius: _animation.value,
                                       spreadRadius: _animation.value),
                                 ],
@@ -102,13 +102,6 @@ class _FindHamsterViewState extends State<FindHamsterView>
                     top: 30,
                     child: Row(
                       children: [
-                        IconButton(
-                          onPressed: () {},
-                          icon: const Icon(
-                            Icons.arrow_back,
-                            size: 30,
-                          ),
-                        ),
                         SizedBox(
                           width: context.width * 0.05,
                         ),

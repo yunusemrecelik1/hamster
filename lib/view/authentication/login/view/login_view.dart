@@ -116,8 +116,11 @@ class LoginView extends StatelessWidget {
           Align(
             alignment: Alignment.centerRight,
             child: GestureDetector(
+              onTap: () {
+                value.forgetNavigate();
+              },
               child: AppText(
-                myText: "Şifrenizimi unuttunuz?",
+                myText: "Şifremi unuttum?",
                 color: ColorPalette.instance.loginTextColor,
                 normalFontSize: 13,
                 fontWeight: FontWeight.w600,

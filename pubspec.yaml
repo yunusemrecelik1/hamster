@@ -38,6 +38,13 @@ dependencies:
   #qrscanner
   qr_flutter: ^4.0.0
   qr_code_scanner: ^0.6.1
+  #User interaction
+  fluttertoast: ^8.0.8
+  permission_handler: ^8.3.0
+  #db
+  shared_preferences: ^2.0.13
+  #chart
+  syncfusion_flutter_charts: ^19.4.50
 dev_dependencies:
   flutter_test:
     sdk: flutter

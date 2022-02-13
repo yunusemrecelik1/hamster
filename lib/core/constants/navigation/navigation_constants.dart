@@ -7,4 +7,7 @@ class NavigationConstants {
   static const mobileverify = "/mobileverify";
   static const mapsection = "/maphome";
   static const home = "/home";
+  static const forgetPassword = "/forgetPassword";
+  static const statisticsPage = "/statisticsPage";
+
 }

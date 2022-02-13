@@ -9,19 +9,36 @@ import 'package:hamster/core/init/navigation/navigation_service.dart';
 class FindHamsterModelView extends ChangeNotifier with BaseViewModel {
   @override
   void init() {
-    getCurrentLocation();
+    determinePosition();
   }
 
   @override
   void setContext(BuildContext context) => this.context;
   double locationLongitude = 38.963745;
-  double locationLatidude = 35.243320;
-  void getCurrentLocation() async {
-    var position = await Geolocator.getCurrentPosition(
-        desiredAccuracy: LocationAccuracy.high);
-    var lastPosition = await Geolocator.getLastKnownPosition();
+  double locationLatitude = 35.243320;
+  late Position position;
+  Future<void> determinePosition() async {
+    bool serviceEnabled;
+    LocationPermission permission;
+    serviceEnabled = await Geolocator.isLocationServiceEnabled();
+    if (!serviceEnabled) {
+      return Future.error('Servis Dışı');
+    }
+
+    permission = await Geolocator.checkPermission();
+    if (permission == LocationPermission.denied) {
+      permission = await Geolocator.requestPermission();
+      if (permission == LocationPermission.denied) {
+        return Future.error('İzin Verilmedi');
+      }
+    }
+
+    if (permission == LocationPermission.deniedForever) {
+      return Future.error('İzin Verilmedi');
+    }
+    position = await Geolocator.getCurrentPosition();
+    locationLatitude = position.latitude;
     locationLongitude = position.longitude;
-    locationLatidude = position.latitude;
     notifyListeners();
   }
 

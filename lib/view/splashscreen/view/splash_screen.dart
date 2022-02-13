@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hamster/core/constants/image/image_constants.dart';
 import 'package:hamster/core/constants/navigation/navigation_constants.dart';
-import 'package:hamster/core/init/navigation/navigation_route.dart';
 import 'package:hamster/core/init/navigation/navigation_service.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -21,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
   navigateWithDelay() {
     Future.delayed(
       const Duration(seconds: 5),
-      () => NavigationService.instance.navigateToPage(
+      () => NavigationService.instance.navigateToPageClear(
         path: NavigationConstants.loginPage,
       ),
     );
