@@ -1,6 +1,6 @@
 # Hamster
 
-Clean Architecture-Mvvm Mimarisi-Mobx statemanagement-Theme Management-Atomic Design gibi konularda kendimi geliştirmek amaçlı yaptığım uygulamadır.
+Flutter Fest Hackathon projesidir.
 
 * Tasarım: https://www.figma.com/file/ckt3FUAhtu9vMnjOVKp745/flutter_proje?node-id=0%3A1
 * Backend: Firebase
