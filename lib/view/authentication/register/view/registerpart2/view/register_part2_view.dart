@@ -43,13 +43,10 @@ class RegisterContinueView extends StatelessWidget {
                       ),
                       Padding(
                         padding: viewInsets,
-                        child: Expanded(
-                          flex: 13,
-                          child: AnimatedContainer(
-                            duration: const Duration(milliseconds: 300),
-                            curve: Curves.bounceInOut,
-                            child: formBody(context, value),
-                          ),
+                        child: AnimatedContainer(
+                          duration: const Duration(milliseconds: 300),
+                          curve: Curves.bounceInOut,
+                          child: formBody(context, value),
                         ),
                       ),
                       Expanded(
